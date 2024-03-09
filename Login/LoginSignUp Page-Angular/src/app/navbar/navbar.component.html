@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand" href="javascript:void(0);" routerLink="/" >NPS</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-expanded="false" aria-controls="navbarsExampleDefault" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span> 
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar nav ar-auto">
+        <ng-container *ngIf="this.loginSignup.isAuthenticated;then authenticated;else unAuthenticated"></ng-container>
+
+        <ng-template #unAuthenticated>
+            <li><a class="nav-link" href="javascript:void(0);" routerLink="/signup" style="color: beige;">SignUp</a></li>
+            <li><a class="nav-link" href="javascript:void(0);" routerLink="/login" style="color: beige;">Login</a></li>
+        </ng-template>
+        
+        <ng-template #authenticated>
+            <li><a class="nav-link" href="javascript:void(0);" routerLink="/dashboard">Dashboard</a></li>
+            <li><a class="nav-link" href="javascript:void(0);" (click)="logout()">Logout</a></li>
+        </ng-template>
+      
+     
+    </ul>
+    </div></nav>
